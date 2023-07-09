@@ -7,7 +7,7 @@ import commonConfig from "./webpack.common";
 const devConfig: Configuration = {
   mode: "development",
   devServer: {
-    port: 3000,
+    port: 3001,
   },
   optimization: {
     splitChunks: false,

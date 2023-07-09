@@ -1,13 +1,26 @@
 import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./App.css";
 
+import Landing from "./pages/Landing";
+import Pricing from "./pages/Pricing";
+import NotFoundPage from "./pages/404";
+
+const router = createBrowserRouter([
+  {
+    path:"/pricing",
+    Component:Pricing
+  },
+  {
+    path: "/",
+    Component: Landing,
+    errorElement: <NotFoundPage/>,
+  },
+]);
+
 const App = () => {
-  return (
-    <div className={`bg-red-400 font-extrabold`}>
-      <h1>Hello world!</h1>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
